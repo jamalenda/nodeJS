@@ -43,6 +43,42 @@ app.get('/ex/b', function(req, res, next){
 	res.send('Hello, from B~');
 });
 
+//ARRAY ROUTE
+
+var c0 = function (req, res, next) {
+	console.log('c0');
+	next();
+}
+var c1 = function (req, res, next) {
+	console.log('c1');
+	next();
+}
+var c2 = function (req, res) {
+	res.send('Hello from C~~');
+}
+app.get('/ex/c', [c0,c1,c2]);
+
+//COMBINATION OF ARRAY & INDIE FUNCTIONS
+
+var d0 = function (req, res, next){
+	console.log('d0');
+	next();
+}
+
+var d1 = function (req, res, next){
+	console.log('d1');
+	next();
+}
+
+app.get('/ex/d', [d0, d1], function(req, res, next){
+	console.log('response will be sent by next function ....');
+	next();
+}, function (req, res){
+	res.send('Hello from D~');
+});
+
+
+
 app.post('/', function (req, res) {
 	res.send('POST request to the homepage');
 });
