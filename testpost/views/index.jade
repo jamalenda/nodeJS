@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p
+  h2= 'Post Test'
+  form(method="POST", action="/user")
+   p Name
+    input(type="text", name="name")
+   p Email
+    input(type="email", name="email")
+   p Age
+    input(type="number", name="age")
+   p
+    input(type="submit")
