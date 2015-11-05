@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  
+  block content
+    h1= title
+    form(method="post" action="/create")
+      label(for="comment") Got something to say:
+      input(type="text", name="comment", value=comment)
+      input(type="submit", value="Save")
+  
+   p #{comment}
