@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1
+		Posted List
+	ul
+		each title, i in list
+			li
+				a(href="/detail/id="+title._id)=title.title

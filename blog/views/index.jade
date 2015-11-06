@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+ 
+ 
+    form(method="post" action="/create")
+     div
+      span I want to post
+     div
+      span.label Title :      
+      input(type="text", name="title")
+     div
+      span.label Detail :
+      textarea(name="detail", cols="40", rows="15")
+     div
+      input(type="submit", value="Save")
+     div 
+  a(class="button", href="/list") List
+
+      
+     
+     
